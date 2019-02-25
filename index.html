@@ -145,7 +145,7 @@ def true(a):
   return _
 
 
-def false(a,b):
+def false(a):
   def _(b):
    return b             
 
@@ -168,7 +168,7 @@ def false(a,b):
 def cond(a):
   def _(b):
     def conditional(c):
-      return c(a, b)              
+      return c(a)(b)              
     
     return conditional 
 
@@ -183,7 +183,7 @@ def cond(a):
         <section>
           <section>
             <h2>
-              Alguamas linguagens
+              Algumas linguagens
             </h2>
           </section>
           <section data-background="#dddddd">
