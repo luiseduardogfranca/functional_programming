@@ -41,6 +41,12 @@
       .effect-panel{
         box-shadow: 5px 10px 20px rgb(32, 32, 31) !important;
       }
+
+      .img{
+        display: inline-block !important; 
+        width: 150px !important; 
+      }
+
     </style>
   </head>
 
@@ -104,8 +110,74 @@
             </div>
           </section>
 
-          <section></section>
+          <section data-background="#FFFFFF">
+            <h2 style="font-size:150px">f(<img src="./images/fusca-antigo.jpg" class="img style-image">) → <img src="./images/fusca-novo.jpg" class="img  style-image"> </h3>
+          </section>
 
+          <section>
+            <h2>Operador térnario com <strong>λ</strong></h2>
+            <h4 style="text-align:justify; color:rgba(255, 255, 255, 0.40)"><&zwj;cond> ? <&zwj;expr1>:<&zwj;expr2></h4>
+          </section>
+
+          <section>
+            <h4 style="text-align:justify; color:rgba(255, 255, 255, 0.40)">
+              Sintaxe
+            </h4>
+            <h2>λ<&zwj;name>.<&zwj;body></h2>
+          </section>
+
+          <section>
+            <p>Primeiro definimos a função para <strong>true</strong> e <strong>false</strong></p>
+            <div style="margin-top: 50px; text-align:justify;">
+              <p class="fragment highlight-transparent">def true = λa.λb.a</p>
+              <p class="fragment highlight-transparent">def false = λa.λb.b</p>
+            </div>
+          </section>
+
+          <section>
+            <p>O equivalente em programação...</p>
+            <pre>
+              <code class="python" data-trim>
+def true(a):
+  def _(b):
+    return a
+  
+  return _
+
+
+def false(a,b):
+  def _(b):
+   return b             
+
+  return _
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <p>Depois é montado toda a expressão</p>
+            <div style="margin-top: 50px; text-align:justify;">
+              <p class="fragment highlight-transparent">def cond = λa.λb.λc.((c a) b) </p>
+            </div>
+          </section>
+
+          <section>
+            <p>O equivalente em programação...</p>
+            <pre>
+              <code class="python" data-trim>
+def cond(a):
+  def _(b):
+    def conditional(c):
+      return c(a, b)              
+    
+    return conditional 
+
+  return _
+
+              </code>
+            </pre>
+          </section>
+          
         </section>
 
         <section>
@@ -212,6 +284,11 @@ put_elem(dic, 0, "world")
             </pre>
             <p class="text-right">em Python</p>
           </section>
+
+          <section>
+            <p>Concorrência é beneficiada com programação funcional devido a sua estrutura</p>
+          </section>
+
         </section>
 
         <section>
